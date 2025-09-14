@@ -53,7 +53,7 @@ export function LandingNavbar() {
               onClick={() => router.push('/')}
               className="flex items-center gap-2 text-xl font-bold text-gray-900 hover:text-blue-600"
             >
-              <Logo size={32} variant="icon" />
+              <Logo size={40} variant="icon" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
                 $pendr
               </span>

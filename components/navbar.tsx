@@ -60,36 +60,16 @@ export function Navbar() {
               onClick={() => router.push('/')}
               className="flex items-center gap-2 text-xl font-bold text-gray-900 hover:text-blue-600"
             >
-              <Logo size={32} variant="icon" />
+              <Logo size={40} variant="icon" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
                 $pendr
               </span>
             </Button>
           </div>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - Hidden after landing page */}
           <div className="hidden md:flex items-center space-x-1">
-            <Button
-              variant="ghost"
-              onClick={() => router.push('/landing#pricing')}
-              className="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100"
-            >
-              Pricing
-            </Button>
-            <Button
-              variant="ghost"
-              onClick={() => router.push('/landing#solution')}
-              className="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100"
-            >
-              Features
-            </Button>
-            <Button
-              variant="ghost"
-              onClick={() => router.push('/landing#problem')}
-              className="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100"
-            >
-              Problem
-            </Button>
+            {/* Navigation items removed - only shown on landing page */}
           </div>
 
           {/* Right Side Actions */}
@@ -111,6 +91,10 @@ export function Navbar() {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-48">
+                  <DropdownMenuItem onClick={() => router.push('/landing')}>
+                    <Home className="h-4 w-4 mr-2" />
+                    Home
+                  </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => handleNavigation('/profile')}>
                     <User className="h-4 w-4 mr-2" />
                     Profile
@@ -163,27 +147,7 @@ export function Navbar() {
         {isMobileMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
-              <Button
-                variant="ghost"
-                onClick={() => router.push('/landing#pricing')}
-                className="w-full justify-start flex items-center gap-3 px-3 py-2 text-sm"
-              >
-                Pricing
-              </Button>
-              <Button
-                variant="ghost"
-                onClick={() => router.push('/landing#solution')}
-                className="w-full justify-start flex items-center gap-3 px-3 py-2 text-sm"
-              >
-                Features
-              </Button>
-              <Button
-                variant="ghost"
-                onClick={() => router.push('/landing#problem')}
-                className="w-full justify-start flex items-center gap-3 px-3 py-2 text-sm"
-              >
-                Problem
-              </Button>
+              {/* Navigation items removed - only shown on landing page */}
               
               {user ? (
                 /* Mobile User Actions */
@@ -201,6 +165,14 @@ export function Navbar() {
                       <div className="text-sm text-gray-500">{user.email}</div>
                     </div>
                   </div>
+                  <Button
+                    variant="ghost"
+                    onClick={() => router.push('/landing')}
+                    className="w-full justify-start flex items-center gap-3 px-3 py-2 text-sm"
+                  >
+                    <Home className="h-4 w-4" />
+                    Home
+                  </Button>
                   <Button
                     variant="ghost"
                     onClick={() => handleNavigation('/profile')}
