@@ -1,0 +1,7 @@
+{
+  "/landing/page": "app/landing/page.js",
+  "/page": "app/page.js",
+  "/signup/page": "app/signup/page.js",
+  "/ai-optimizer/page": "app/ai-optimizer/page.js",
+  "/ai-optimizer/channel-breakdown/page": "app/ai-optimizer/channel-breakdown/page.js"
+}
