@@ -27,6 +27,7 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useAuth } from '@/contexts/AuthContext'
+import Logo from '@/components/Logo'
 
 export function Navbar() {
   const router = useRouter()
@@ -59,16 +60,36 @@ export function Navbar() {
               onClick={() => router.push('/')}
               className="flex items-center gap-2 text-xl font-bold text-gray-900 hover:text-blue-600"
             >
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">$</span>
-              </div>
-              $pendr
+              <Logo size={32} variant="icon" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                $pendr
+              </span>
             </Button>
           </div>
 
-          {/* Desktop Navigation - Empty for now */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
-            {/* Navigation items removed */}
+            <Button
+              variant="ghost"
+              onClick={() => router.push('/landing#pricing')}
+              className="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+            >
+              Pricing
+            </Button>
+            <Button
+              variant="ghost"
+              onClick={() => router.push('/landing#solution')}
+              className="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+            >
+              Features
+            </Button>
+            <Button
+              variant="ghost"
+              onClick={() => router.push('/landing#problem')}
+              className="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+            >
+              Problem
+            </Button>
           </div>
 
           {/* Right Side Actions */}
@@ -142,6 +163,28 @@ export function Navbar() {
         {isMobileMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+              <Button
+                variant="ghost"
+                onClick={() => router.push('/landing#pricing')}
+                className="w-full justify-start flex items-center gap-3 px-3 py-2 text-sm"
+              >
+                Pricing
+              </Button>
+              <Button
+                variant="ghost"
+                onClick={() => router.push('/landing#solution')}
+                className="w-full justify-start flex items-center gap-3 px-3 py-2 text-sm"
+              >
+                Features
+              </Button>
+              <Button
+                variant="ghost"
+                onClick={() => router.push('/landing#problem')}
+                className="w-full justify-start flex items-center gap-3 px-3 py-2 text-sm"
+              >
+                Problem
+              </Button>
+              
               {user ? (
                 /* Mobile User Actions */
                 <div className="pt-4">
