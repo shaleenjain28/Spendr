@@ -1,7 +1,0 @@
-{
-  "/page": "app/page.js",
-  "/ai-optimizer/page": "app/ai-optimizer/page.js",
-  "/landing/page": "app/landing/page.js",
-  "/campaign-setup/page": "app/campaign-setup/page.js",
-  "/ai-optimizer/channel-breakdown/page": "app/ai-optimizer/channel-breakdown/page.js"
-}
